@@ -1,0 +1,13 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1728594716
+icon.svg::CompressedTexture2D::4285037085928595872::1728588811::1728588816::1::::<><>::
+::res://assets/::1728593275
+::res://assets/dictionaries/::1728593280
+2of12inf.txt::TextFile::-1::1728593280::0::1::::<><>::
+::res://scenes/::1728594628
+game.tscn::PackedScene::5887074101521221488::1728594628::0::1::::<><>::
+::res://scripts/::1728590013
+::res://scripts/autoload/::1728594619
+word_dictionary.gd::GDScript::-1::1728594619::0::1::::<>Node<>::
+::res://scripts/utils/::1728593753
+trie.gd::GDScript::-1::1728593753::0::1::::Trie<>RefCounted<>::
