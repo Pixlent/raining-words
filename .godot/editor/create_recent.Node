@@ -1,5 +1,6 @@
+Node2D
+CharacterBody2D
+CollisionShape2D
 Label
 Sprite2D
-CharacterBody2D
-Node2D
 Camera2D

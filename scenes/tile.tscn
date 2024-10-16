@@ -1,14 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqrb8phbu5pnd"]
+[gd_scene load_steps=4 format=3 uid="uid://cqrb8phbu5pnd"]
 
 [ext_resource type="Script" path="res://scripts/tile.gd" id="1_ei8l1"]
 [ext_resource type="Texture2D" uid="uid://b2bx61ts0gjjk" path="res://icon.svg" id="1_j3d6o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cne5l"]
+font_size = 76
 
 [node name="Tile" type="Node2D"]
 script = ExtResource("1_ei8l1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_j3d6o")
 
 [node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_filter = 1
+text = "A"
+label_settings = SubResource("LabelSettings_cne5l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="Label" to="." method="_on_label_gui_input"]
