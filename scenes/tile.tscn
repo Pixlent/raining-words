@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqrb8phbu5pnd"]
+
+[ext_resource type="Script" path="res://scripts/tile.gd" id="1_ei8l1"]
+[ext_resource type="Texture2D" uid="uid://b2bx61ts0gjjk" path="res://icon.svg" id="1_j3d6o"]
+
+[node name="Tile" type="Node2D"]
+script = ExtResource("1_ei8l1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j3d6o")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

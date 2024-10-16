@@ -3,6 +3,7 @@ extends Node
 const WORD_LIST_PATH := "res://assets/dictionaries/2of12inf.txt"
 
 var words: Trie = Trie.new()
+var random := RandomNumberGenerator.new()
 
 func _ready():
 	if FileAccess.file_exists(WORD_LIST_PATH):
@@ -12,7 +13,7 @@ func _ready():
 			# Process each line here
 			if line.contains("%"):
 				continue
-			if line.length() > 1:
+			if line.length() > 2:
 				words.insert(line)
 		file.close()
 	else:
@@ -20,4 +21,8 @@ func _ready():
 	print("Counted " + str(words.count_words()) + " words")
 
 func contains_word():
+	pass
+
+func generate_random_word():
+	
 	pass
