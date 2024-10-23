@@ -1,13 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqrb8phbu5pnd"]
+[gd_scene load_steps=5 format=3 uid="uid://cqrb8phbu5pnd"]
 
 [ext_resource type="Script" path="res://scripts/tile.gd" id="1_ei8l1"]
 [ext_resource type="Texture2D" uid="uid://b2bx61ts0gjjk" path="res://icon.svg" id="1_j3d6o"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwvtm"]
+size = Vector2(150, 150)
+
 [sub_resource type="LabelSettings" id="LabelSettings_cne5l"]
 font_size = 76
 
-[node name="Tile" type="Node2D"]
+[node name="Tile" type="Node2D" groups=["tiles"]]
 script = ExtResource("1_ei8l1")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_wwvtm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -31,5 +39,3 @@ text = "A"
 label_settings = SubResource("LabelSettings_cne5l")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[connection signal="gui_input" from="Label" to="." method="_on_label_gui_input"]

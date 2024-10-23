@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 WordDictionary="*res://scripts/autoload/word_dictionary.gd"
 
+[global_group]
+
+tiles=""
+
 [input]
 
 left_mouse_button={
