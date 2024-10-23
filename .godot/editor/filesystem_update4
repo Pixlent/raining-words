@@ -1,4 +1,6 @@
 res://scenes/game.tscn
 res://scenes/tile.tscn
 res://scripts/grid.gd
+res://scripts/utils/trie.gd
+res://scripts/autoload/word_dictionary.gd
 res://scripts/tile.gd

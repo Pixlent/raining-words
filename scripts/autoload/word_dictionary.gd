@@ -13,16 +13,16 @@ func _ready():
 			# Process each line here
 			if line.contains("%"):
 				continue
-			if line.length() > 2:
+			if line.length() == 5:
 				words.insert(line)
 		file.close()
 	else:
 		print("File not found: " + WORD_LIST_PATH)
 	print("Counted " + str(words.count_words()) + " words")
 
-func contains_word():
-	pass
+func contains_word(word: String) -> bool:
+	return words.contains(word.to_lower())
 
 func generate_random_word():
-	
+	return words.generate_random_word()
 	pass

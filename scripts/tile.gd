@@ -12,7 +12,8 @@ var selected: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	label.text = String.chr(random.randi_range(65, 90))
+	#label.text = String.chr(random.randi_range(65, 90))
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -24,3 +25,8 @@ func select():
 		selected = true
 		sprite_2d.show()
 		grid.erase_tile(pos)
+
+func deselect():
+	if selected:
+		selected = false
+		sprite_2d.hide()
