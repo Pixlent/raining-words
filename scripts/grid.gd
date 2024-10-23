@@ -21,13 +21,18 @@ func _ready():
 	for i in 5:
 		var word: String = WordDictionary.generate_random_word()
 		
+		print(word)
+		
 		for letter in 5:
 			var random_pos: Vector2 = possible_positions.pick_random()
-			var tile = TILE.instantiate()
+			var tile: Tile = TILE.instantiate()
+			var random_letter: String = word[letter]
+			
+			random_letter = random_letter.to_upper()
 			
 			possible_positions.erase(random_pos)
 			
-			tile.label = word[letter]
+			tile.letter = random_letter
 			tile.grid = self
 			tile.pos = random_pos
 			tile.position = Vector2((random_pos.x-(GRID_SIZE/2)) * GRID_SPACING, (random_pos.y-(GRID_SIZE/2)) * GRID_SPACING)
@@ -48,8 +53,6 @@ func _input(event):
 		if !tile.selected:
 			selection.append(tile)
 			tile.select()
-			print("Added letter " + tile.label.text + " to selection")
-		
 		if selection.size() == 5:
 			var word: String = ""
 			for entry: Tile in selection:
@@ -58,7 +61,7 @@ func _input(event):
 				print("Selection ended: " + word)
 				for entry: Tile in selection:
 					entry.queue_free()
-					entry.erase(entry.pos)
+					erase_tile(entry.pos)
 			else:
 				print("Selection ended and word doesn't exist: " + word)
 				for entry: Tile in selection:

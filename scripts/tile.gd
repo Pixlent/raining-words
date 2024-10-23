@@ -7,12 +7,13 @@ class_name Tile
 @export var grid: Grid
 @export var pos: Vector2
 
+var letter: String = "?"
 var random := RandomNumberGenerator.new()
 var selected: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#label.text = String.chr(random.randi_range(65, 90))
+	label.text = letter # String.chr(random.randi_range(65, 90))
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
