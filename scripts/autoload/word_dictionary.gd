@@ -26,6 +26,7 @@ func _ready():
 		print("File not found: " + WORD_LIST_PATH)
 	print("Counted " + str(words.count_words()) + " words")
 	letter_loot_table = Sorter.sort_dict_by_value(letter_loot_table)
+	print(letter_loot_table)
 
 func contains_word(word: String) -> bool:
 	return words.contains(word.to_lower())

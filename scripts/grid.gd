@@ -14,18 +14,7 @@ var selection: Array = []
 func _ready():
 	for x in GRID_SIZE:
 		for y in GRID_SIZE:
-			var random_letter = WordDictionary.roll_random_letter()
-			var tile = TILE.instantiate()
-			
-			random_letter = random_letter.to_upper()
-			
-			tile.grid = self
-			tile.letter = random_letter
-			tile.pos = Vector2(x, y)
-			tile.position = Vector2((x-(GRID_SIZE/2)) * GRID_SPACING, (y-(GRID_SIZE/2)) * GRID_SPACING)
-			tiles.merge({Vector2(x, y):tile})
-			
-			add_child(tile)
+			place_tile(x, y)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -47,7 +36,7 @@ func _input(event):
 				print("Selection ended: " + word)
 				for entry: Tile in selection:
 					entry.queue_free()
-					erase_tile(entry.pos)
+					place_tile(entry.pos.x, entry.pos.y)
 			else:
 				print("Selection ended and word doesn't exist: " + word)
 				for entry: Tile in selection:
@@ -61,10 +50,26 @@ func erase_tile(pos: Vector2):
 		print("Tile doesn't exist: " + str(pos))
 		return
 	
+	
+	
 	#tile.queue_free()
 	#tiles.erase(pos)
 	
 	#print("Tile selected: " + str(pos) + " - " + str(tile.label.text))
+
+func place_tile(x: int, y: int):
+	var random_letter = WordDictionary.roll_random_letter()
+	var tile = TILE.instantiate()
+	
+	random_letter = random_letter.to_upper()
+	
+	tile.grid = self
+	tile.letter = random_letter
+	tile.pos = Vector2(x, y)
+	tile.position = Vector2((x-(GRID_SIZE/2)) * GRID_SPACING, (y-(GRID_SIZE/2)) * GRID_SPACING)
+	tiles.merge({Vector2(x, y):tile})
+	
+	add_child(tile)
 
 func get_tile(pos: Vector2):
 	return tiles.get(pos)
