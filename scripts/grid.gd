@@ -12,34 +12,20 @@ var selection: Array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var possible_positions: Array = []
-	
 	for x in GRID_SIZE:
 		for y in GRID_SIZE:
-			possible_positions.append(Vector2(x, y))
-	
-	for i in 5:
-		var word: String = WordDictionary.generate_random_word()
-		
-		print(word)
-		
-		for letter in 5:
-			var random_pos: Vector2 = possible_positions.pick_random()
-			var tile: Tile = TILE.instantiate()
-			var random_letter: String = word[letter]
+			var random_letter = WordDictionary.roll_random_letter()
+			var tile = TILE.instantiate()
 			
 			random_letter = random_letter.to_upper()
 			
-			possible_positions.erase(random_pos)
-			
-			tile.letter = random_letter
 			tile.grid = self
-			tile.pos = random_pos
-			tile.position = Vector2((random_pos.x-(GRID_SIZE/2)) * GRID_SPACING, (random_pos.y-(GRID_SIZE/2)) * GRID_SPACING)
-			tiles.merge({random_pos:tile})
+			tile.letter = random_letter
+			tile.pos = Vector2(x, y)
+			tile.position = Vector2((x-(GRID_SIZE/2)) * GRID_SPACING, (y-(GRID_SIZE/2)) * GRID_SPACING)
+			tiles.merge({Vector2(x, y):tile})
+			
 			add_child(tile)
-	
-	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -1,4 +1,5 @@
 res://scenes/game.tscn
 res://scenes/tile.tscn
+res://scripts/autoload/word_dictionary.gd
 res://scripts/grid.gd
-res://scripts/tile.gd
+res://scripts/utils/sorter.gd
