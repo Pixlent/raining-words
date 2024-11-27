@@ -25,7 +25,6 @@ func select():
 	if !selected:
 		selected = true
 		sprite_2d.show()
-		grid.erase_tile(pos)
 
 func deselect():
 	if selected:

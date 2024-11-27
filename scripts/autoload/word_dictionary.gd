@@ -3,6 +3,8 @@ extends Node
 const WORD_LIST_PATH := "res://assets/dictionaries/2of12inf.txt"
 
 var words: Trie = Trie.new()
+var found_words: Array = []
+var used_words: Array = []
 var letter_loot_table: Dictionary = {}
 var random := RandomNumberGenerator.new()
 
@@ -61,3 +63,23 @@ func roll_random_letter() -> String:
 			return key
 		num -= value
 	return "?"
+
+func find_all_possible_words(letters: Array):
+	found_words = []
+	used_words = []
+	
+	for _i in range(letters.size()):
+		used_words.append(false)
+	
+	_backtrack("", letters)
+	return words
+
+func _backtrack(current_word: String, remaining_letters: Array):
+		if contains_word(current_word):
+			found_words.append(current_word)
+		
+		for i in range(remaining_letters.size()):
+			var letter = remaining_letters[i]
+			var new_remaining = remaining_letters.duplicate()
+			new_remaining.remove_at(i)
+			_backtrack(current_word + letter, new_remaining)
