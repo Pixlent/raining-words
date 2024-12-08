@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1100"
+   height="400"
+   viewBox="0 0 291.04166 105.83333"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="splash_screen.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.4689925"
+     inkscape:cx="539.82576"
+     inkscape:cy="168.14245"
+     inkscape:window-width="2560"
+     inkscape:window-height="1380"
+     inkscape:window-x="-9"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-size:36.7341px;font-family:'Carter One';-inkscape-font-specification:'Carter One, Normal';text-align:center;text-anchor:middle;fill:#ef233c;stroke-width:2.89245;stroke-linecap:round;stroke-linejoin:round"
+       x="144.63297"
+       y="62.736938"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="stroke-width:2.89245"
+         x="144.63297"
+         y="62.736938">Raining Words</tspan></text>
+  </g>
+</svg>

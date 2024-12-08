@@ -3,8 +3,6 @@ extends Node
 const WORD_LIST_PATH := "res://assets/dictionaries/2of12inf.txt"
 
 var words: Trie = Trie.new()
-var found_words: Array = []
-var used_words: Array = []
 var letter_loot_table: Dictionary = {}
 var random := RandomNumberGenerator.new()
 
@@ -64,22 +62,39 @@ func roll_random_letter() -> String:
 		num -= value
 	return "?"
 
-func find_all_possible_words(letters: Array):
-	found_words = []
-	used_words = []
+func iterate_words(callback: Callable, node = words.root, prefix = ""):
+	if node.has('*'):
+		callback.call(prefix)
 	
-	for _i in range(letters.size()):
-		used_words.append(false)
-	
-	_backtrack("", letters)
-	return words
+	for letter in node.keys():
+		if letter != '*':
+			iterate_words(callback, node[letter], prefix + letter)
 
-func _backtrack(current_word: String, remaining_letters: Array):
-		if contains_word(current_word):
-			found_words.append(current_word)
-		
-		for i in range(remaining_letters.size()):
-			var letter = remaining_letters[i]
-			var new_remaining = remaining_letters.duplicate()
-			new_remaining.remove_at(i)
-			_backtrack(current_word + letter, new_remaining)
+func can_make_word(word: String, letters: Array[String]) -> bool:
+	for letter in word:
+		if letters.has(letter):
+			letters.remove_at(letters.find(letter))
+		else:
+			return false
+	return true
+
+func find_words(available_letters: Array[String]) -> Array[String]:
+	var letter_count = {}
+	for letter in available_letters:
+		letter_count[letter] = letter_count.get(letter, 0) + 1
+	
+	return _recursive_word_search(letter_count)
+
+func _recursive_word_search(letter_count: Dictionary, node = words.root, prefix = "") -> Array[String]:
+	var found_words: Array[String] = []
+	
+	if node.has('*'):
+		found_words.append(prefix)
+	
+	for letter in node.keys():
+		if letter != '*' and letter in letter_count and letter_count[letter] > 0:
+			letter_count[letter] -= 1
+			found_words.append_array(_recursive_word_search(letter_count, node[letter], prefix + letter))
+			letter_count[letter] += 1
+	
+	return found_words

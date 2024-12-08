@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqrb8phbu5pnd"]
+[gd_scene load_steps=6 format=3 uid="uid://cqrb8phbu5pnd"]
 
 [ext_resource type="Script" path="res://scripts/tile.gd" id="1_ei8l1"]
-[ext_resource type="Texture2D" uid="uid://b2bx61ts0gjjk" path="res://icon.svg" id="1_j3d6o"]
+[ext_resource type="Texture2D" uid="uid://dexwydqjooayo" path="res://assets/textures/selected.svg" id="2_jf07g"]
+[ext_resource type="Texture2D" uid="uid://4qoonqsyrxyv" path="res://assets/textures/word.svg" id="3_10wu3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwvtm"]
 size = Vector2(150, 150)
@@ -17,11 +18,17 @@ script = ExtResource("1_ei8l1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_wwvtm")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("1_j3d6o")
+[node name="Texture" type="Sprite2D" parent="."]
+position = Vector2(3.8147e-06, -3.8147e-06)
+scale = Vector2(2.79167, 2.79167)
+texture = ExtResource("3_10wu3")
 
-[node name="Label" type="Label" parent="."]
+[node name="Selected" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(2.792, 2.792)
+texture = ExtResource("2_jf07g")
+
+[node name="Word" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

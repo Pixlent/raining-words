@@ -1,7 +1,11 @@
+Button
+Label
+VBoxContainer
+TextureRect
+Sprite2D
+Node2D
+GridContainer
 CollisionShape2D
 Area2D
-Node2D
 CharacterBody2D
-Label
-Sprite2D
 Camera2D

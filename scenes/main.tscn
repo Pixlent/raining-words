@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://btsquafm70ehn"]
+
+[ext_resource type="Script" path="res://scripts/ui/start_button.gd" id="1_1cvkx"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_50dxo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x1lwj"]
+font_size = 120
+font_color = Color(0, 0.768627, 0.603922, 1)
+
+[sub_resource type="Theme" id="Theme_txqhi"]
+default_font_size = 60
+
+[sub_resource type="InputEventKey" id="InputEventKey_tue8o"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_yvklh"]
+events = [SubResource("InputEventKey_tue8o")]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_50dxo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -417.0
+offset_top = -100.0
+offset_right = 418.0
+offset_bottom = 209.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Raining Words"
+label_settings = SubResource("LabelSettings_x1lwj")
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_txqhi")
+theme_override_colors/font_disabled_color = Color(0.937255, 0.137255, 0.235294, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.937255, 0.137255, 0.235294, 1)
+theme_override_colors/font_hover_color = Color(0, 0.768627, 0.603922, 1)
+theme_override_colors/font_pressed_color = Color(0.937255, 0.137255, 0.235294, 1)
+theme_override_colors/font_focus_color = Color(0.937255, 0.137255, 0.235294, 1)
+theme_override_colors/font_color = Color(0.937255, 0.137255, 0.235294, 1)
+theme_override_colors/font_outline_color = Color(0.937255, 0.137255, 0.235294, 1)
+shortcut = SubResource("Shortcut_yvklh")
+text = "Start"
+flat = true
+script = ExtResource("1_1cvkx")
+
+[connection signal="pressed" from="VBoxContainer/Button" to="VBoxContainer/Button" method="_on_pressed"]

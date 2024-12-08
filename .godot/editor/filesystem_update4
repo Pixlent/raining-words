@@ -1,0 +1,10 @@
+res://scenes/main.tscn
+res://scenes/game.tscn
+res://scenes/tile.tscn
+res://scripts/start_button.gd
+res://scripts/scene_manager.gd
+res://scripts/main.gd
+res://scripts/autoload/scene_manager.gd
+res://scripts/grid.gd
+res://scenes/game_over.tscn
+res://scripts/ui/restart_button.gd

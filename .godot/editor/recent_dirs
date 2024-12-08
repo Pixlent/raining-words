@@ -1,4 +1,6 @@
-res://scripts/utils
-res://
+res://scripts/ui
+res://scripts
 res://scripts/autoload
 res://scenes
+res://scripts/utils
+res://
