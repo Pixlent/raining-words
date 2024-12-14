@@ -2,7 +2,7 @@ extends Node
 
 @onready var main: Control
 
-var game_instance: Node2D
+var game_instance: Node
 
 func hook_main(main_scene: Control):
 	main = main_scene
@@ -18,4 +18,3 @@ func load_game(game: String):
 	if game_resource:
 		game_instance = game_resource.instantiate()
 		main.add_child(game_instance)
-	print("Game started!")

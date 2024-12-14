@@ -6,7 +6,8 @@ const GAME_OVER = preload("res://scenes/game_over.tscn")
 const GRID_SPACING: int = 150
 const GRID_SIZE: int = 5
 
-var seed: int = 0
+var seed: int = hash(SceneManager.main.seed)
+var tile_deletion_chance: int = SceneManager.main.tile_deletion_chance
 var tiles: Dictionary = {}
 var selection: Array = []
 var score: int = 0
@@ -73,7 +74,7 @@ func check_word():
 		
 		for entry: Tile in selection:
 			erase_tile(entry.pos)
-			if random.randi_range(0, 10) > 0:
+			if random.randi_range(0, 100) > tile_deletion_chance:
 				place_tile(entry.pos)
 		
 		var remaining_words: Array[String] = WordDictionary.find_words(get_letters())

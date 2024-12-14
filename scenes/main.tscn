@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://btsquafm70ehn"]
+[gd_scene load_steps=8 format=3 uid="uid://btsquafm70ehn"]
 
 [ext_resource type="Script" path="res://scripts/ui/start_button.gd" id="1_1cvkx"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_50dxo"]
+[ext_resource type="Script" path="res://scripts/settings_button.gd" id="3_2olcc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x1lwj"]
 font_size = 120
@@ -62,4 +63,14 @@ text = "Start"
 flat = true
 script = ExtResource("1_1cvkx")
 
+[node name="Settings" type="Button" parent="."]
+layout_mode = 1
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 105.0
+offset_bottom = 35.0
+text = "Settings"
+script = ExtResource("3_2olcc")
+
 [connection signal="pressed" from="VBoxContainer/Button" to="VBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="Settings" to="Settings" method="_on_settings_button_pressed"]

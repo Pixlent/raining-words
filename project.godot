@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 WordDictionary="*res://scripts/autoload/word_dictionary.gd"
 SceneManager="*res://scripts/autoload/scene_manager.gd"
 
+[display]
+
+window/size/resizable=false
+
 [global_group]
 
 tiles=""

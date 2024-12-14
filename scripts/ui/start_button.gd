@@ -1,5 +1,6 @@
 extends Button
 
+@onready var settings = $"../../Settings"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,5 +13,6 @@ func _process(delta):
 
 func _on_pressed():
 	get_parent().hide()
+	settings.hide()
 	SceneManager.load_game("res://scenes/game.tscn")
 	pass # Replace with function body.

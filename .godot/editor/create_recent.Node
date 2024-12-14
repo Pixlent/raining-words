@@ -1,6 +1,10 @@
 Button
 Label
+HSlider
+CheckBox
+LineEdit
 VBoxContainer
+HBoxContainer
 TextureRect
 Sprite2D
 Node2D
@@ -8,4 +12,3 @@ GridContainer
 CollisionShape2D
 Area2D
 CharacterBody2D
-Camera2D
